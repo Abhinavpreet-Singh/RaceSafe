@@ -1,0 +1,160 @@
+{
+  "info": {
+    "name": "RaceSafe DeFi API",
+    "description": "F1-themed MEV Protection API Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "health"]
+        }
+      }
+    },
+    {
+      "name": "Get System Stats",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/stats",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "stats"]
+        }
+      }
+    },
+    {
+      "name": "Generate Sandwich Attack",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"attackType\": \"SANDWICH\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/demo/attack",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "demo", "attack"]
+        }
+      }
+    },
+    {
+      "name": "Generate Frontrun Attack",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"attackType\": \"FRONTRUN\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/demo/attack",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "demo", "attack"]
+        }
+      }
+    },
+    {
+      "name": "Generate Backrun Attack",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"attackType\": \"BACKRUN\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/demo/attack",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "demo", "attack"]
+        }
+      }
+    },
+    {
+      "name": "Get All Flagged Transactions",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/flagged",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "flagged"]
+        }
+      }
+    },
+    {
+      "name": "Get Sandwich Attacks Only",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/flagged?attackType=SANDWICH",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "flagged"],
+          "query": [
+            {
+              "key": "attackType",
+              "value": "SANDWICH"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Live Mempool Feed",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/mempool/live?limit=20",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "mempool", "live"],
+          "query": [
+            {
+              "key": "limit",
+              "value": "20"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
